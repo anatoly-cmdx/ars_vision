@@ -29,6 +29,9 @@ gem 'slim-rails'
 
 gem 'responders'
 
+# User authorization
+gem 'cancancan'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

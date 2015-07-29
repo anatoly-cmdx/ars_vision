@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Company, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:people).dependent(:restrict_with_exception) }
+
+  it { should validate_presence_of :country_code }
+  it { should validate_presence_of :name }
 end

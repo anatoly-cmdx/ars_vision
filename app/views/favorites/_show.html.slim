@@ -1,0 +1,15 @@
+- if can? :favorites, favoritable
+
+  - if favoritable.favorited_by? current_user
+    =< link_to '★', \
+    polymorphic_path([:remove_from_favorites, favoritable]), \
+    id: "favorites_#{ dom_id favoritable }", \
+    class: "favorite", \
+    remote: true, method: :patch
+
+  - else
+    =< link_to '☆', \
+    polymorphic_path([:add_to_favorites, favoritable]), \
+    id: "favorites_#{ dom_id favoritable }", \
+    class: "favorite", \
+    remote: true, method: :patch

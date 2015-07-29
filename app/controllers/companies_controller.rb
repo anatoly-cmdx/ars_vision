@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationThinController
+  include FavoritableController
+
   before_action :authenticate_user!
   before_action :load_resource, only: [:show]
   authorize_resource

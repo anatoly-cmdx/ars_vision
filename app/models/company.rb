@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+  include Favoritable
+
   has_many :people, dependent: :restrict_with_exception
 
   FIELD_FORMAT = {

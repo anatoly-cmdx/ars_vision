@@ -3,4 +3,6 @@
 = div_for company
   span
     = link_to company.name, company_path(company)
-  span =< "(#{company.country_code} - #{country_name})"
+  span
+    =< "(#{company.country_code} - #{country_name})"
+  = render 'favorites/show', favoritable: company

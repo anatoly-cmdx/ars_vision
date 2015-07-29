@@ -3,5 +3,13 @@ Rails.application.routes.draw do
 
   root to: 'companies#index'
 
-  resources :companies, only: [:index, :show]
+  concern :favoritable do
+    member do
+      patch :add_to_favorites
+      patch :remove_from_favorites
+    end
+  end
+
+  resources :companies, only: [:index, :show], concerns: :favoritable
+  resources :people, only: [], concerns: :favoritable
 end

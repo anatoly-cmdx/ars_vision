@@ -18,6 +18,13 @@ class Ability
   end
 
   def user_abilities
+    alias_action :add_to_favorites, :remove_from_favorites, to: :favorites
+
     can :read, Company
+    can :favorites, favoritables
+  end
+
+  def favoritables
+    [Company, Person]
   end
 end

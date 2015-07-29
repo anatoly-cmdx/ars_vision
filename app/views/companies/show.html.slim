@@ -1,11 +1,16 @@
 - company = @company
 - country_name = Country.find_country_by_alpha2(company.country_code).name
 
+- if can? :read, Company
+  div
+    = link_to 'All companies', companies_path
+
 = div_for company
   h1
     = company.name
   p
-    = "#{company.country_code} - #{country_name}"
+    span = "#{company.country_code} - #{country_name}"
+    = render 'favorites/show', favoritable: company
   h2
     | People
   p

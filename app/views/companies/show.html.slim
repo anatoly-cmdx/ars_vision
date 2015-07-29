@@ -7,7 +7,7 @@
 
 = div_for company
   h1
-    = company.name
+    = "Company: #{company.name}"
   p
     span = "#{company.country_code} - #{country_name}"
     = render 'favorites/show', favoritable: company

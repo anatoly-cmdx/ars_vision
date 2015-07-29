@@ -22,6 +22,7 @@ class Ability
 
     can :read, Company
     can :favorites, favoritables
+    can :read, Favorite
   end
 
   def favoritables

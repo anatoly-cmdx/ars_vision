@@ -1,0 +1,10 @@
+- if can? :read, Company
+  div
+    = link_to 'All companies', companies_path
+
+h1 My favorites
+
+- @favorites.each do |favorite|
+  - favoritable = favorite.favoritable
+
+  = render favoritable

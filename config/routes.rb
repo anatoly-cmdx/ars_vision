@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:index, :show], concerns: :favoritable
   resources :people, only: [], concerns: :favoritable
+
+  get :favorites, to: 'favorites#index'
 end

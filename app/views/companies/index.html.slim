@@ -1,3 +1,8 @@
+- if can? :read, Favorite
+  div
+    = link_to 'My favorites', favorites_path
+
+h1 Companies
+
 .companies
-  - @companies.each do |company|
-    = render 'index_record', company: company
+  = render @companies

@@ -4,6 +4,8 @@ class CreateFavorites < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.integer :favoritable_id, null: false
       t.string :favoritable_type, null: false
+
+      t.timestamps null: false
     end
 
     add_index :favorites, [:user_id, :favoritable_id, :favoritable_type], \

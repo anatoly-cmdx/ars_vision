@@ -32,6 +32,9 @@ gem 'responders'
 # User authorization
 gem 'cancancan'
 
+# Useful information about every country
+gem 'countries'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationThinController
   before_action :authenticate_user!
+  before_action :load_resource, only: [:show]
   authorize_resource
 
   def index
@@ -7,9 +8,13 @@ class CompaniesController < ApplicationThinController
     respond_with @companies
   end
 
+  def show
+    respond_with @company
+  end
+
   private
 
   def include_resources
-    [:person]
+    [:people]
   end
 end

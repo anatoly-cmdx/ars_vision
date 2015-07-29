@@ -1,4 +1,6 @@
+- country_name = Country.find_country_by_alpha2(company.country_code).name
+
 = div_for company
-  - country_name = Country.find_country_by_alpha2(company.country_code).name
-  span = company.name
+  span
+    = link_to company.name, company_path(company)
   span =< "(#{company.country_code} - #{country_name})"

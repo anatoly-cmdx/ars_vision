@@ -1,0 +1,12 @@
+- company = @company
+- country_name = Country.find_country_by_alpha2(company.country_code).name
+
+= div_for company
+  h1
+    = company.name
+  p
+    = "#{company.country_code} - #{country_name}"
+  h2
+    | People
+  p
+    = render 'people/list', company: company

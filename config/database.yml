@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 'localhost'
+  user: 'ars_vision'
+  password: 'wkRq63W8Q2x01H9ObaS6'
+
+development:
+  <<: *default
+  database: ars_vision_development
+
+test:
+  <<: *default
+  database: ars_vision_test
+
